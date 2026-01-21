@@ -18,11 +18,11 @@ A powerful Strapi 5 plugin that adds true polymorphic relations to your content 
 ## 📦 Installation
 
 ```bash
-npm install strapi-plugin-polymorphic-relations
+npm install @sivium/strapi-plugin-polymorphic-relations
 # or
-yarn add strapi-plugin-polymorphic-relations
+yarn add @sivium/strapi-plugin-polymorphic-relations
 # or
-pnpm add strapi-plugin-polymorphic-relations
+pnpm add @sivium/strapi-plugin-polymorphic-relations
 ```
 
 ## 🚀 Quick Start
