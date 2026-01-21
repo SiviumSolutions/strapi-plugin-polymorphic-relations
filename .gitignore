@@ -6,3 +6,5 @@ dist
 .cache
 build
 .strapi
+
+dev/
