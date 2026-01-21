@@ -1,0 +1,23 @@
+{
+  "form.label": "Поліморфне відношення",
+  "form.description": "Виберіть будь-який тип контенту та сутність",
+  "form.attribute.item.requiredField": "Обов'язкове поле",
+  "form.attribute.item.requiredField.description": "Ви не зможете створити запис, якщо це поле порожнє",
+  "field.contentType.placeholder": "Виберіть тип контенту",
+  "field.entity.placeholder": "Виберіть сутність",
+  "field.selected": "Вибрано:",
+  "field.type": "Тип:",
+  "field.id": "ID:",
+  "settings.title": "Налаштування",
+  "settings.allowedTypes.label": "Дозволені типи контенту",
+  "settings.allowedTypes.description": "Виберіть які типи контенту можна вибирати в цьому полі",
+  "settings.displayField.label": "Поле для відображення",
+  "settings.displayField.description": "Поле для відображення в селекторі (за замовчуванням: id)",
+  "advanced.title": "Розширені",
+  "private.label": "Приватне поле",
+  "private.description": "Це поле не буде показано в API відповіді",
+  "settings.relationType.label": "Тип відношення",
+  "settings.relationType.description": "Виберіть між одиничним або множинним вибором",
+  "settings.relationType.one": "Має один (Single)",
+  "settings.relationType.many": "Має багато (Multiple)"
+}

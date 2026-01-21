@@ -1,0 +1,23 @@
+{
+  "form.label": "Polymorphic Relation",
+  "form.description": "Select any content type and entity",
+  "form.attribute.item.requiredField": "Required field",
+  "form.attribute.item.requiredField.description": "You won't be able to create an entry if this field is empty",
+  "field.contentType.placeholder": "Select a content type",
+  "field.entity.placeholder": "Select an entity",
+  "field.selected": "Selected:",
+  "field.type": "Type:",
+  "field.id": "ID:",
+  "settings.title": "Settings",
+  "settings.allowedTypes.label": "Allowed Content Types",
+  "settings.allowedTypes.description": "Select which content types can be selected in this field",
+  "settings.displayField.label": "Display Field",
+  "settings.displayField.description": "Field to display in the selector (default: id)",
+  "advanced.title": "Advanced",
+  "private.label": "Private field",
+  "private.description": "This field will not show up in the API response",
+  "settings.relationType.label": "Relation Type",
+  "settings.relationType.description": "Choose between single or multiple selection",
+  "settings.relationType.one": "Has One (Single)",
+  "settings.relationType.many": "Has Many (Multiple)"
+}

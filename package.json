@@ -1,0 +1,94 @@
+{
+  "name": "@sivium/strapi-plugin-polymorphic-relations",
+  "version": "1.0.0",
+  "description": "Strapi 5 plugin for polymorphic relations - select any content type and entity in one field with inverse relation support",
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "strapi-v5",
+    "strapi5",
+    "polymorphic",
+    "relations",
+    "custom-field",
+    "inverse-relations"
+  ],
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@strapi/design-system": "^2.0.0-rc.25",
+    "@strapi/icons": "^2.0.0-rc.25",
+    "react-intl": "^7.1.11"
+  },
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^5.3.2",
+    "@strapi/strapi": "^5.27.0",
+    "@strapi/typescript-utils": "^5.27.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "prettier": "^3.6.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "styled-components": "^6.1.19",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@strapi/sdk-plugin": "^5.3.2",
+    "@strapi/strapi": "^5.27.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "styled-components": "^6.1.19"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "polymorphic-relation",
+    "displayName": "Polymorphic Relations",
+    "description": "Add polymorphic relation fields to your content types - select any content type and entity in one field with inverse relation support"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivium/strapi-plugin-polymorphic-relations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sivium/strapi-plugin-polymorphic-relations/issues"
+  },
+  "homepage": "https://github.com/sivium/strapi-plugin-polymorphic-relations#readme",
+  "author": "Sivium Solutions",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=6.0.0"
+  }
+}
