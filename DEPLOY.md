@@ -75,13 +75,64 @@ GitHub Actions автоматично опублікує нову версію! 
 
 ## Troubleshooting
 
-### Якщо workflow падає з помилкою 401:
+### ❌ "Access token expired or revoked" (401 Error)
 
-- Перевірте що NPM_TOKEN правильно доданий до GitHub Secrets
-- Перевірте що токен типу "Automation" (не "Publish")
-- Токен має бути від користувача який є членом організації @sivium
+**Причина**: NPM_TOKEN в GitHub Secrets застарів або невалідний.
 
-### Якщо workflow падає з помилкою 403:
+**Рішення**:
+
+1. **Створіть новий токен**:
+   - Перейдіть: https://www.npmjs.com/settings/maxnomad/tokens
+   - Видаліть старий токен (якщо є)
+   - Натисніть **"Generate New Token"** → виберіть **"Automation"**
+   - Скопіюйте новий токен
+
+2. **Оновіть GitHub Secret**:
+   - Перейдіть: https://github.com/SiviumSolutions/strapi-plugin-polymorphic-relations/settings/secrets/actions
+   - Знайдіть `NPM_TOKEN` → натисніть **"Update"**
+   - Вставте новий токен → **"Update secret"**
+
+3. **Повторіть публікацію**:
+
+   ```bash
+   # Видаліть старий тег локально та на GitHub
+   git tag -d v1.0.1
+   git push origin :refs/tags/v1.0.1
+
+   # Створіть новий тег
+   git tag v1.0.1
+   git push origin v1.0.1
+   ```
+
+### ❌ "Not found" (404 Error)
+
+**Причина**: Це перша публікація scoped пакету `@sivium/...`
+
+**Рішення**:
+
+- Переконайтесь, що ви член організації `@sivium` на npm
+- Workflow автоматично використовує `--access public`
+- Якщо організація не існує, створіть її: https://www.npmjs.com/org/create
+
+### ❌ Permission denied (403 Error)
+
+**Рішення**:
 
 - Перевірте що ваш npm користувач має права публікувати під @sivium
 - Перевірте на https://www.npmjs.com/settings/sivium/members
+- Automation токен повинен мати права на публікацію
+
+### ❌ Build fails
+
+**Рішення**:
+
+- Перевірте локально: `npm run build`
+- Перегляньте логи workflow в GitHub Actions
+- Переконайтесь, що всі залежності встановлені
+
+## Безпека
+
+- **Ніколи не комітьте** npm токен в репозиторій
+- Використовуйте **Automation** токени для CI/CD (вони bypasses 2FA)
+- Регулярно оновлюйте токени (кожні 3-6 місяців)
+- Токени можна відкликати в будь-який час з npm settings
