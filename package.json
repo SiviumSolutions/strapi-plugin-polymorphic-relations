@@ -1,6 +1,6 @@
 {
   "name": "@sivium/strapi-plugin-polymorphic-relations",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Strapi 5 plugin for polymorphic relations - select any content type and entity in one field with inverse relation support",
   "keywords": [
     "strapi",

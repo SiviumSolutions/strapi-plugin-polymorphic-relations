@@ -22,7 +22,7 @@ const register = ({ strapi }: { strapi: Core.Strapi }) => {
     type: 'json',
   });
 
-  strapi.log.info('✅ Polymorphic Relations custom field registered on server');
+  strapi.log.info('Polymorphic Relations custom field registered on server');
 };
 
 export default register;

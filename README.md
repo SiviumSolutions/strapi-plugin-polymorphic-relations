@@ -191,6 +191,34 @@ GET /api/posts?populate[myPolymorphicField]=*
 GET /api/posts?populate[myPolymorphicField][populate]=author
 ```
 
+## 🔍 Filtering
+
+The plugin supports filtering by fields within the polymorphic relation, even without `populate`. This is handled via pre-processing middleware that resolves relationships before the main query.
+
+### Basic Filtering
+
+Filter by a specific field in the related entity:
+
+```bash
+GET /api/articles?filters[myPolymorphicField][title][$eq]=My Article
+```
+
+### Complex Filtering
+
+Combine multiple filters on the polymorphic relation:
+
+```bash
+GET /api/articles?filters[myPolymorphicField][title][$containsi]=tech&filters[myPolymorphicField][isPublished][$eq]=true
+```
+
+### Combined with Populate
+
+You can filter and populate at the same time:
+
+```bash
+GET /api/articles?populate=myPolymorphicField&filters[myPolymorphicField][title][$eq]=My Article
+```
+
 ## ⚙️ Configuration
 
 ### Global Configuration
@@ -349,7 +377,7 @@ Developed by [Sivium Solutions](https://github.com/SiviumSolutions)
 
 ## 🔗 Links
 
-- [npm Package](https://www.npmjs.com/package/strapi-plugin-polymorphic-relations)
+- [npm Package](https://www.npmjs.com/package/@sivium/strapi-plugin-polymorphic-relations)
 - [GitHub Repository](https://github.com/SiviumSolutions/strapi-plugin-polymorphic-relations)
 - [Strapi Documentation](https://docs.strapi.io)
 
